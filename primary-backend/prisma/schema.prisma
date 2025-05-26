@@ -23,6 +23,29 @@ model Student {
   UserRole UserRole
   courses Course[] @relation("Enrollments")
   cert Cert[]
+  coursePurchaseToken PurchaseToken[]
+  wishlist Wishlist[]
+}
+
+model PurchaseToken {
+  id String @id @default(uuid())
+  purchaseToken String @unique
+  timeStamp DateTime @updatedAt
+  stuId String
+  student Student @relation(fields: [stuId],references: [id])
+}
+
+model Wishlist{
+  id String @id @default(uuid())
+  courseId String
+  courseName String
+  courseImg String
+  courseDescription String
+  courseRating Float
+  hoursOfcontent Float
+  CoursePrice Float
+  stuId String
+  student Student @relation(fields: [stuId],references: [id])
 }
 
 model Cert{
