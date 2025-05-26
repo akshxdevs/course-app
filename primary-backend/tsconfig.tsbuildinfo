@@ -1,0 +1,1 @@
+{"root":["./src/config.ts","./src/index.ts","./src/db/db.ts","./src/prisma/seed.ts","./src/routes/admin.ts","./src/routes/cert.ts","./src/routes/course.ts","./src/routes/payment.ts","./src/routes/user.ts","./src/types/index.ts"],"version":"5.8.3"}

@@ -1,0 +1,13 @@
+//  "stuName":"akash",
+//     "stuImg":"https://emoji.aranja.com/static/emoji-data/img-apple-160/1f4b8.png",
+//     "stuPassword":"123random",
+//     "stuUserName":"akash@gmail.com",
+//     "UserRole":"STUDENT"
+
+// {
+//     "admName":"joe",
+//     "admImg":"https://emoji.aranja.com/static/emoji-data/img-apple-160/1f4d8.png",
+//     "admPassword":"123random",
+//     "admUserName":"joe@gmail.com",
+//     "UserRole":"ADMIN"
+// }
