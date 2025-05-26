@@ -20,9 +20,20 @@ model Student {
   stuImg String
   stuUserName String @unique
   stuPassword String
-  courseId String?
   UserRole UserRole
-  course Course[]
+  courses Course[] @relation("Enrollments")
+  cert Cert[]
+}
+
+model Cert{
+  id String @id @default(uuid())
+  isComplete Boolean @default(false)
+  courseName String
+  courseId String
+  stuName String
+  stuId String
+  course Course @relation(fields: [courseId],references: [id])
+  student Student @relation(fields: [stuId],references: [id])
 }
 
 model Admin {
@@ -42,13 +53,13 @@ model Course {
   courseDescription String
   courseRating Float
   hoursOfcontent Float
-  particalExcercise Float
+  practicalExcercise Float
   CoursePrice Float
+  enrolledCount Int @default(0)
   tutorId String 
-  enrolledCount String
-  stuId String
-  student Student @relation(fields: [stuId],references: [id])
+  students Student[] @relation("Enrollments")
   admin Admin @relation(fields: [tutorId],references: [id])
+  cert Cert[]
 }
 
 enum UserRole {
