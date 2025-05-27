@@ -5,7 +5,6 @@ const client_1 = require("@prisma/client");
 const zod_1 = require("zod");
 exports.StudentSignupSchema = zod_1.z.object({
     stuName: zod_1.z.string(),
-    stuImg: zod_1.z.string(),
     stuUserName: zod_1.z.string().email(),
     stuPassword: zod_1.z.string().min(8).max(30),
     UserRole: zod_1.z.nativeEnum(client_1.UserRole)

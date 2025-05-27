@@ -3,7 +3,6 @@ import { z } from "zod";
 
 export const StudentSignupSchema = z.object({
     stuName:z.string(),
-    stuImg:z.string(),
     stuUserName: z.string().email(), 
     stuPassword:z.string().min(8).max(30),
     UserRole:z.nativeEnum(UserRole)

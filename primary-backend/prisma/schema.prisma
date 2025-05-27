@@ -17,7 +17,7 @@ datasource db {
 model Student {
   id String @id @default(uuid())
   stuName String
-  stuImg String
+  stuImg String?
   stuUserName String @unique
   stuPassword String
   UserRole UserRole

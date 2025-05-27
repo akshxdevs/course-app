@@ -26,7 +26,7 @@ router.post("/signup", (req, res) => __awaiter(void 0, void 0, void 0, function*
         if (!parsedBody.success) {
             return res.status(403).json({ message: "Incorrect Inputs!", Error: parsedBody.error.errors });
         }
-        const { stuName, stuImg, stuUserName, stuPassword, UserRole } = parsedBody.data;
+        const { stuName, stuUserName, stuPassword, UserRole } = parsedBody.data;
         const existingUser = yield db_1.prismaClient.student.findFirst({
             where: {
                 stuUserName,
@@ -39,10 +39,9 @@ router.post("/signup", (req, res) => __awaiter(void 0, void 0, void 0, function*
         const createUser = yield db_1.prismaClient.student.create({
             data: {
                 stuName,
-                stuImg,
-                stuPassword: hashPassword,
                 stuUserName,
-                UserRole,
+                stuPassword: hashPassword,
+                UserRole: "STUDENT",
             }
         });
         res.status(200).json({
