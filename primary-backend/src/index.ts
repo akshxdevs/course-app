@@ -4,8 +4,8 @@ import { PORT } from "./config";
 import { userRouter } from "./routes/user";
 import { adminRouter } from "./routes/admin";
 import { courseRouter } from "./routes/course";
-import { paymentRouter } from "./routes/payment";
 import { certRouter } from "./routes/cert";
+import { paymentRouter } from "./routes/payment";
 
 const app = express();
 
